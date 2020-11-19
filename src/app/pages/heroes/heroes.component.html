@@ -3,9 +3,7 @@
 
 <div class="row">
     <div class="col text-right">
-        <button 
-            routerLink="/heroe/nuevo"
-            class="btn btn-primary">
+        <button routerLink="/heroe/nuevo" class="btn btn-primary">
             <i class="fa fa-plus"></i>
             Agregar
         </button>
@@ -23,12 +21,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+        <tr *ngFor="let heroe of heroes; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ heroe.nombre }}</td>
+            <td>{{ heroe.poder }}</td>
+            <td>
+                <label class="badge badge-success" *ngIf="heroe.vivo">Vivo</label>
+                <label class="badge badge-danger" *ngIf="!heroe.vivo">Muerto</label>
+            </td>
+            <td>
+                <button class="btn btn-info mr-1" [routerLink]="['/heroe', heroe.id ]"></button>
+                <i class="fas fa-pen"></i>
+            </td>
         </tr>
     </tbody>
 </table>
