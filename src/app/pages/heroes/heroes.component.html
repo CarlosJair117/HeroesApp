@@ -30,8 +30,12 @@
                 <label class="badge badge-danger" *ngIf="!heroe.vivo">Muerto</label>
             </td>
             <td>
-                <button class="btn btn-info mr-1" [routerLink]="['/heroe', heroe.id ]"></button>
-                <i class="fas fa-pen"></i>
+                <button class="btn btn-info mr-1" [routerLink]="['/heroe', heroe.id ]">
+                    <i class="fas fa-pen"></i> Editar
+                </button>
+                <button class="btn btn-danger mr" [routerLink]="['/heroe', heroe.id ]">
+                    <i class="fas fa-pen"></i> Eliminar
+                </button>
             </td>
         </tr>
     </tbody>
