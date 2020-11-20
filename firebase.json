@@ -1,0 +1,10 @@
+{
+    "hosting": {
+        "public": "dist/heroesApp",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ]
+    }
+}
